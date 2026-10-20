@@ -10,7 +10,23 @@ describe('calcularPrecioFinal', () => {
     expect(calcularPrecioFinal(1000, 0)).toBe(1000);
   });
 
+  it('devuelve cero con un descuento del 100 %', () => {
+    expect(calcularPrecioFinal(1000, 100)).toBe(0);
+  });
+
   it('rechaza descuentos superiores al 100 %', () => {
     expect(() => calcularPrecioFinal(1000, 150)).toThrow(RangeError);
+  });
+
+  it('rechaza precios negativos', () => {
+    expect(() => calcularPrecioFinal(-100, 10)).toThrow(RangeError);
+  });
+
+  it('rechaza descuentos negativos', () => {
+    expect(() => calcularPrecioFinal(1000, -10)).toThrow(RangeError);
+  });
+
+  it('rechaza NaN como precio', () => {
+    expect(() => calcularPrecioFinal(Number.NaN, 10)).toThrow(RangeError);
   });
 });
