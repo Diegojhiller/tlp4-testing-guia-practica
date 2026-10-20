@@ -160,7 +160,7 @@ La **integración continua** consiste en integrar cambios con frecuencia y autom
 
 1. Obtener el código del repositorio.
 2. Preparar Node.js.
-3. Instalar dependencias con `npm ci`.
+3. Instalar dependencias con `npm install`.
 4. Ejecutar `npm run typecheck`.
 5. Ejecutar `npm test`.
 
